@@ -63,7 +63,8 @@ class hangman:
             print(self.correctly_guessed_letters)
             print(f"Turn :  {self.turn_count}")
             print(f"Life :  {self.lives}")
-            print(f"Error_counat :  {self.error_count}")
+            print(f"Error count :  {self.error_count}")
+            print(f"Wrong guesses :  {self.wrongly_guessed_letters}")
             self.turn_count +=1
             print("New turn ! ")
             print(f"Turn :  {self.turn_count}")
