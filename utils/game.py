@@ -28,8 +28,6 @@ class hangman:
             for letter in range(len(self.word_to_find)):
                 if self.word_to_find[letter] == guess:
                     self.correctly_guessed_letters[letter] = guess
-                elif self.correctly_guessed_letters[letter] == guess:
-                    self.correctly_guessed_letters[letter] = self.word_to_find[letter]
             return True
         else:
             self.wrongly_guessed_letters.append(guess)
@@ -85,3 +83,6 @@ class hangman:
         """
         print(f"You found the word: '{''.join(self.word_to_find)}' in {self.turn_count} turns with {self.error_count} errors!")
         print("Well played")
+
+player = hangman()
+player.start_game()
