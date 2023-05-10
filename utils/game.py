@@ -16,6 +16,7 @@ class hangman:
         self.correctly_guessed_letters= ["_"]*len(self.word_to_find)
         self.wrongly_guessed_letters=[]
 
+
     def verification(self, guess):
         """
         Method that checks if the given letter is in the word to be found.
@@ -55,7 +56,8 @@ class hangman:
         """
         Method that starts the game and runs a loop until the game is over.
         """
-        print("Start game")
+        print("START GAME : ")
+        self.print_hangman()
         while(self.lives != 0 and "_" in self.correctly_guessed_letters):
             self.play()
             print(self.correctly_guessed_letters)
@@ -83,6 +85,11 @@ class hangman:
         """
         print(f"You found the word: '{''.join(self.word_to_find)}' in {self.turn_count} turns with {self.error_count} errors!")
         print("Well played")
+
+    def print_hangman(self):
+        drawing_hangman = ["    +---+","    |   |","    O   |","   /|\\  |","   / \\  |","        |","  ========",]
+        for line in drawing_hangman:
+            print(line)
 
 player = hangman()
 player.start_game()
